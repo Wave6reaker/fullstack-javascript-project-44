@@ -7,29 +7,26 @@ console.log('Answer "yes" if the number is even, otherwise answer "no". ');
 function isEven(num) {
     return num % 2 === 0;
 }
+function Game() {
+    const need = 3;
+    let correct = 0;
 
-function playGame() {
-    const correctAnswersNeeded = 3;
-    let correctAnswers = 0;
-
-    while (correctAnswers < correctAnswersNeeded) {
+    while (correct < need) {
         const num = Math.floor(Math.random() * 100) + 1;
         console.log(`Question: ${num}`);
-        const userAnswer = readlineSync.question("Your answer: ").toLowerCase().trim();
+        const user = readlineSync.question("Your answer: ").toLowerCase().trim();
 
-        if ((isEven(num) && userAnswer === 'yes') || (!isEven(num) && userAnswer === 'no')) {
+        if ((isEven(num) && user === 'yes') || (!isEven(num) && user === 'no')) {
             console.log("Correct!");
             correctAnswers++;
         } else {
-            const correctAnswer = isEven(num) ? 'yes' : 'no';
-            console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+            const correct = isEven(num) ? 'yes' : 'no';
+            console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correct}'.`);
             console.log("Let's try again");
             return;
         }
     }
-
     console.log('Congratulations!');
 }
-
-playGame();
+Game();
   
