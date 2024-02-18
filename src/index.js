@@ -1,28 +1,44 @@
 import readlineSync from 'readline-sync';
+import playCalcGame from './games/brain-calc.js';
+import playEvenGame from './games/brain-even.js';
+import playGCDGame from './games/brain-gcd.js';
+import playProgressionGame from './games/brain-progression.js';
+import playPrimeGame from './games/brain-prime.js';
+import welcomeUser from './cli.js';
 
-const roundsCount = 3;
+export const chooseGame = () => {
+  console.log('Please choose a game:');
+  console.log('1. Calculator Game');
+  console.log('2. Even Number Game');
+  console.log('3. Greatest Common Divisor Game');
+  console.log('4. Arithmetic Progression Game');
+  console.log('5. Prime Number Game');
 
-const runGame = (gameDescription, generateRoundData) => {
-  console.log('Welcome to the Brain Games!');
-  const playerName = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${playerName}!`);
-  console.log(gameDescription);
+  const choice = readlineSync.question('Enter the number of the game you want to play: ');
 
-  for (let i = 0; i < roundsCount; i++) {
-    const { question, correctAnswer } = generateRoundData();
-    console.log(`Question: ${question}`);
-    const userAnswer = readlineSync.question('Your answer: ');
-
-    if (userAnswer !== correctAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-      console.log(`Let's try again, ${playerName}!`);
-      return;
-    }
-
-    console.log('Correct!');
+  switch (choice) {
+    case '1':
+      playCalcGame();
+      break;
+    case '2':
+      playEvenGame();
+      break;
+    case '3':
+      playGCDGame();
+      break;
+    case '4':
+      playProgressionGame();
+      break;
+    case '5':
+      playPrimeGame();
+      break;
+    default:
+      console.log('Invalid choice. Please enter a valid number.');
+      chooseGame();
   }
-
-  console.log(`Congratulations, ${playerName}!`);
 };
 
-export default runGame;
+export const startGame = () => {
+  welcomeUser();
+  chooseGame();
+};

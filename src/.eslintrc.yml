@@ -1,0 +1,22 @@
+---
+plugins:
+  - jest
+
+# Устанавливаем окружение Node.js
+env:
+  node: true
+
+# Используем конфигурации от airbnb и jest
+extends:
+  - 'airbnb-base'
+  - 'plugin:jest/recommended'
+
+# Устанавливаем опции парсера
+parserOptions:
+  ecmaVersion: latest
+
+# Пользовательские правила линтера
+rules:
+  no-console: 0  # Разрешаем использование console в коде
+  import/extensions: off  # Отключаем проверку расширений файлов при импортах
+  no-underscore-dangle: [2, { "allow": ["__filename", "__dirname"] }]  # Разрешаем использование "_" в некоторых именах
