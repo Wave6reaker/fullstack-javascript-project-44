@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import welcomeUser from '../cli.js';
 
-// Функция для вычисления НОД двух чисел
+
 const findGCD = (num1, num2) => {
   let a = num1;
   let b = num2;
@@ -16,7 +16,7 @@ const findGCD = (num1, num2) => {
 };
 
 const playGCDGame = () => {
-  const playerName = welcomeUser(); // Запуск приветствия
+  const playerName = welcomeUser(); 
 
   console.log('Find the greatest common divisor of given numbers.\n');
 

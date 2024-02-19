@@ -24,7 +24,7 @@ const calculateExpression = (num1, operator, num2) => {
 };
 
 const playCalcGame = () => {
-  const playerName = welcomeUser(); // Запуск приветствия
+  const playerName = welcomeUser(); 
 
   console.log('What is the result of the expression?\n');
 

@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import welcomeUser from '../cli.js';
 
-// Функция для проверки, является ли число простым
+
 const isPrime = (num) => {
   if (num < 2) {
     return false;
@@ -15,7 +15,7 @@ const isPrime = (num) => {
 };
 
 const playPrimeGame = () => {
-  const playerName = welcomeUser(); // Запуск приветствия
+  const playerName = welcomeUser(); 
 
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".\n');
 

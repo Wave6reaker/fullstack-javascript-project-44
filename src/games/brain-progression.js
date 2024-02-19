@@ -1,11 +1,11 @@
 import readlineSync from 'readline-sync';
 import welcomeUser from '../cli.js';
 
-// Генерация арифметической прогрессии
+
 const generateProgression = () => {
-  const progressionLength = Math.floor(Math.random() * 6) + 5; // Случайная длина от 5 до 10
-  const start = Math.floor(Math.random() * 50); // Начальное число от 0 до 49
-  const step = Math.floor(Math.random() * 10) + 1; // Случайный шаг от 1 до 10
+  const progressionLength = Math.floor(Math.random() * 6) + 5; 
+  const start = Math.floor(Math.random() * 50); 
+  const step = Math.floor(Math.random() * 10) + 1; 
 
   const progression = [start];
   for (let i = 1; i < progressionLength; i += 1) {
@@ -16,7 +16,7 @@ const generateProgression = () => {
 };
 
 const hideElementInArray = (arr) => {
-  const newArr = [...arr];// Создаем новый массив на основе arr
+  const newArr = [...arr];
   const hiddenIndex = Math.floor(Math.random() * newArr.length);
   const hiddenValue = newArr[hiddenIndex];
   newArr[hiddenIndex] = '..';
@@ -24,7 +24,7 @@ const hideElementInArray = (arr) => {
 };
 
 const playProgressionGame = () => {
-  const playerName = welcomeUser(); // Запуск приветствия
+  const playerName = welcomeUser(); 
 
   console.log('What number is missing in the progression?\n');
 
