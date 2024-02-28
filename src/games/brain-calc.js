@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
 import welcomeUser from '../cli.js';
 
-
 const generateRandomNumber = () => Math.floor(Math.random() * 100) + 1;
 
 const generateRandomOperator = () => {
@@ -24,7 +23,7 @@ const calculateExpression = (num1, operator, num2) => {
 };
 
 const playCalcGame = () => {
-  const playerName = welcomeUser(); 
+  const playerName = welcomeUser();
 
   console.log('What is the result of the expression?\n');
 

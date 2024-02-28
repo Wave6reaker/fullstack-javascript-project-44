@@ -4,7 +4,7 @@ import welcomeUser from '../cli.js';
 const isEven = (number) => number % 2 === 0;
 
 const playEvenGame = () => {
-  const playerName = welcomeUser(); 
+  const playerName = welcomeUser();
 
   console.log('Answer "yes" if the number is even, otherwise answer "no".\n');
 

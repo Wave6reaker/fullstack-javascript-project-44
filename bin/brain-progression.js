@@ -2,4 +2,4 @@
 
 import playProgressionGame from '../src/games/brain-progression.js';
 
-playProgressionGame(); 
+playProgressionGame();
